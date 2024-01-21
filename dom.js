@@ -1,33 +1,33 @@
-const divs = document.getElementsByTagName("div");
+const divs = $("div");
 console.log(divs)
-const h2s = document.getElementsByTagName("h2")
+const h2s = $("h2")
 console.log(h2s)
-const titulo = document.getElementById("titulo")
+const titulo = $("#titulo")
 console.log(titulo)
-const paragrafo = document.getElementById('paragrafo')
+const paragrafo = $('#paragrafo')
 console.log(paragrafo)
-const elementsMarginTop2 = document.getElementsByClassName("mt-02")
+const elementsMarginTop2 = $(".mt-02")
 console.log(elementsMarginTop2)
 
 
 
-const input = document.getElementById("input")
+const input = $("#input")
 console.log(input)
 
 function alterarHtml() {
-    titulo.textContent = input.value
+    titulo.text(input.val()) 
     //titulo.textContent= "Novo Titulosssssssss"
-    titulo.style.color="ac4389"
+    titulo.css('color','ac4389')
 
     for(let element of elementsMarginTop2)
     {
-        element.className = 'mt-4'
+        $(element).addClass('mt-4') 
 
     }
-    input.value = ''
+    input.val("")
 
     const novoP = document.createElement('p')
     novoP.textContent = "elemento criato com js"
-    paragrafo.parentNode.appendChild(novoP)
+    paragrafo.after(novoP)
 }
 
